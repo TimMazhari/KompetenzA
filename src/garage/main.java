@@ -44,7 +44,7 @@ public class main {
                 int value;
                 boolean sold;
                 System.out.println("Name:");
-                carAttributes[0] = inputOutput.inputManager();
+                carAttributes[0] = inputOutput.inputManager(); //TEST
 
                 System.out.println("Model:");
                 carAttributes[1] = inputOutput.inputManager();
