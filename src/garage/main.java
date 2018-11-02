@@ -20,7 +20,8 @@ public class main {
         InputOutput menuInput = new InputOutput();
         InputOutput inputOutput = new InputOutput();
         CarListOutput listOutput = new CarListOutput();
-        Money bankAccountOne = new Money();7        ChangeCarAttribute changeCar = new ChangeCarAttribute();
+        Money bankAccountOne = new Money();
+        ChangeCarAttribute changeCar = new ChangeCarAttribute();
 
         /**
          * clearing the screen once for a normal output.
