@@ -21,7 +21,7 @@ public class main {
         InputOutput inputOutput = new InputOutput();
         CarListOutput listOutput = new CarListOutput();
         Money bankAccountOne = new Money();
-        ChangeCarAttribute changeCar = new ChangeCarAttribute();
+        ChangeCarAttribute changeCar = new ChangeCarAttribute();  //Nick Nick NiCkK niCcKkCccKKkK
 
         /**
          * clearing the screen once for a normal output.
@@ -32,7 +32,6 @@ public class main {
         System.out.println("What you want to do? (type 'help' for a menu list):");
         String menuInputString = menuInput.inputManager();
         boolean close = false;
-
 
         do {
             if (menuInputString.toLowerCase().equals("new car")) {
