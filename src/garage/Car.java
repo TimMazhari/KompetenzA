@@ -12,7 +12,7 @@ public class Car {
      * @return
      */
     public boolean isSold() {
-        return sold;
+        return sold;//du hs
     }
 
     public void setSold(boolean sold) {
