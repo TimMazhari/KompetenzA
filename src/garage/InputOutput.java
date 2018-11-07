@@ -7,9 +7,10 @@ import java.util.Scanner;
  */
 public class InputOutput {
     private String input;
-    Scanner sc = new Scanner(System.in);
-    public String inputManager() {
+        public String inputManager() {
+        Scanner sc = new Scanner(System.in);
         input = sc.nextLine();
+        sc.close();
         return input;
     }
 
@@ -19,8 +20,8 @@ public class InputOutput {
      */
     private int inputNumber;
     private String inputNumberString;
-    Scanner scNumber = new Scanner(System.in);
     public int inputManagerNumber(int tempNumber) {
+        Scanner scNumber = new Scanner(System.in);
         while (tempNumber == 0){
             inputNumberString = scNumber.nextLine();
             if(inputNumberString.matches("[a-zA-Z]+")){
@@ -31,6 +32,7 @@ public class InputOutput {
                 tempNumber = 1;
             }
         }
+        scNumber.close();
         return inputNumber;
     }
 
@@ -39,8 +41,8 @@ public class InputOutput {
      * "broken" or "repaired".
      */
     private String inputBroken;
-    Scanner scBroken = new Scanner(System.in);
     public String inputManagerBroken(int tempBroken) {
+        Scanner scBroken = new Scanner(System.in);
         while (tempBroken == 0){
             inputBroken = scBroken.nextLine();
             if(inputBroken.toLowerCase().equals("broken")){
@@ -54,6 +56,7 @@ public class InputOutput {
                 tempBroken = 0;
             }
         }
+        scBroken.close();
         return inputBroken;
     }
 
@@ -64,8 +67,8 @@ public class InputOutput {
      */
     private boolean inputBool;
     private String inputBoolString;
-    Scanner scBool = new Scanner(System.in);
     public boolean inputManagerBool(int tempBool) {
+        Scanner scBool = new Scanner(System.in);
        while(tempBool == 0) {
            inputBoolString = scBool.nextLine();
            if (inputBoolString.toLowerCase().equals("yes")) {
@@ -78,8 +81,24 @@ public class InputOutput {
                System.out.println("Please enter 'yes' or 'no'");
            }
        }
+       scBool.close();
         return inputBool;
     }
 
 
+    public String getInput() {
+        return input;
+    }
+
+    public int getInputNumber() {
+        return inputNumber;
+    }
+
+    public String getInputBroken() {
+        return inputBroken;
+    }
+
+    public boolean isInputBool() {
+        return inputBool;
+    }
 }
