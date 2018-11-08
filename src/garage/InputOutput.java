@@ -10,7 +10,6 @@ public class InputOutput {
         public String inputManager() {
         Scanner sc = new Scanner(System.in);
         input = sc.nextLine();
-        sc.close();
         return input;
     }
 
@@ -32,7 +31,6 @@ public class InputOutput {
                 tempNumber = 1;
             }
         }
-        scNumber.close();
         return inputNumber;
     }
 
@@ -56,7 +54,6 @@ public class InputOutput {
                 tempBroken = 0;
             }
         }
-        scBroken.close();
         return inputBroken;
     }
 
@@ -81,7 +78,6 @@ public class InputOutput {
                System.out.println("Please enter 'yes' or 'no'");
            }
        }
-       scBool.close();
         return inputBool;
     }
 
@@ -101,4 +97,5 @@ public class InputOutput {
     public boolean isInputBool() {
         return inputBool;
     }
+
 }

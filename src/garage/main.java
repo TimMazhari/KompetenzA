@@ -21,7 +21,7 @@ public class main {
         InputOutput inputOutput = new InputOutput();
         CarListOutput listOutput = new CarListOutput();
         Money bankAccountOne = new Money();
-        ChangeCarAttribute changeCar = new ChangeCarAttribute();  //Nick Nick NiCkK niCcKkCccKKkK
+        ChangeCarAttribute changeCar = new ChangeCarAttribute();
 
         /**
          * clearing the screen once for a normal output.
@@ -154,6 +154,7 @@ public class main {
             screen.clearScreen();
             if(menuInputString.toLowerCase().equals("close")){
                 close = true;
+                System.out.println("Goodbye :)");
             }
 
         }while (close == false);

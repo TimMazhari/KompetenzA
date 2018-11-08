@@ -5,21 +5,8 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 
 public class TestJunit {
-
-    Money moneyTest = new Money();
-    @Test
-    /**
-     * Testing getters and setters of the class "Money".
-     */
-    public void testMoney(){
-        assertEquals(0, moneyTest.getBankAccount());
-        moneyTest.setBankAccount(1);
-        assertEquals(1, moneyTest.getBankAccount());
-    }
-
 
    InputOutput inputOutputTest = new InputOutput();
     @Test
@@ -80,6 +67,11 @@ public class TestJunit {
      */
 
     public void testSoldInputOutput(){
-
+        assertEquals(false, inputOutputTest.isInputBool());
+        String input = "yes";
+        InputStream in = new ByteArrayInputStream(input.getBytes()); //Since the user is asked to input the bool via yes or no, we need to do the string conversion again.
+        System.setIn(in);
+        inputOutputTest.inputManagerBool(0);
+        assertEquals(true, inputOutputTest.isInputBool());
     }
 }
