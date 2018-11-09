@@ -1,6 +1,6 @@
 package garage;
 import org.junit.Test;
-import org.junit.BeforeClass
+import org.junit.BeforeClass;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
@@ -8,15 +8,17 @@ import static org.junit.Assert.assertEquals;
 
 public class TestJunit {
 
+    private static InputOutput inputOutputTest;
+
 	/**
 	 * @BeforeClass is executed once for the whole class. Since we only use one Object to test all the scanners, this is really usefull.
 	 * This is also part of the "arrange" of all the tests
 	 */
 	@BeforeClass
-	public void createTestObject{
-		InputOutput inputOutputTest = new InputOutput();
+	public static void createTestObject(){
+        inputOutputTest = new InputOutput();
 	}
-	
+
     /**
      * Testing first if the return value is set to null after initiation.
      *
@@ -25,8 +27,6 @@ public class TestJunit {
      */
     @Test
     public void testStringInputOutput(){
-        //Optional initialisation test
-        assertEquals(null, inputOutputTest.getInput());
         //Arrange
         String input = "Test";
         InputStream in = new ByteArrayInputStream(input.getBytes()); //ByteArrayInputStream converts a String to a line of bytes. This way the System.In will accept the String.
@@ -42,8 +42,6 @@ public class TestJunit {
      * Testing the scanner for the numbers. This works basically the same way as testing the strings, except that a number is expected.
      */
     public void testIntInputOutput(){
-        //Optional initialisation test
-        assertEquals(0, inputOutputTest.getInputNumber());
         //Arrange
         String inputString = "10"; //String needed because the number is first read as a string and afterwards converted to an int.
         InputStream in = new ByteArrayInputStream(inputString.getBytes()); //ByteArrayInputStream converts a String to a line of bytes. This way the System.In will accept the String.
@@ -60,8 +58,6 @@ public class TestJunit {
      */
 
     public void testBrokenInputOutput(){
-    	//Optional initialisation test
-        assertEquals(null, inputOutputTest.getInputBroken());
         //Arrange
         String input = "broken";
         InputStream in = new ByteArrayInputStream(input.getBytes()); //ByteArrayInputStream converts a String to a line of bytes. This way the System.In will accept the String.
@@ -72,8 +68,6 @@ public class TestJunit {
     }
     @Test
     public void testRepairedInputOutput(){
-        //Optional initialisation test
-        assertEquals(null, inputOutputTest.getInputBroken());
         //Arrange
         String input = "repaired";
         InputStream in = new ByteArrayInputStream(input.getBytes()); //ByteArrayInputStream converts a String to a line of bytes. This way the System.In will accept the String.
@@ -90,8 +84,6 @@ public class TestJunit {
      */
 
     public void testSoldInputOutput(){
-        //Optional initialisation test
-        assertEquals(false, inputOutputTest.isInputBool());
         //Arrange
         String input = "yes";
         InputStream in = new ByteArrayInputStream(input.getBytes()); //Since the user is asked to input the bool via yes or no, we need to do the string conversion again.
